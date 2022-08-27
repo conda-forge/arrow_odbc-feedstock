@@ -1,5 +1,5 @@
 {% set name = "arrow_odbc" %}
-{% set version = "0.2.6" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ec0249c1ee3b696b3126aff628c145f395d8867d9e258d78ac4e3871d6f9ff0d
+  sha256: 921c46309db328f5c3f6ebdf32f9fbb0f1d5c4af4e2707f99285b3167d329692
 
 build:
   number: 0
@@ -15,7 +15,7 @@ build:
   script:
     - {{ PYTHON }} -m build --no-isolation
     - {{ PYTHON }} -m pip install dist/*.whl --no-deps
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml 
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
   build:
@@ -44,7 +44,7 @@ test:
   imports:
     - arrow_odbc
 
-  
+
 outputs:
   - name: arrow_odbc
   - name: arrow-odbc
@@ -67,12 +67,12 @@ about:
   license: MIT
   license_family: MIT
   license_file:
-     - LICENSE
-     - THIRDPARTY.yml
+    - LICENSE
+    - THIRDPARTY.yml
   summary: Read Apache Arrow batches from ODBC data sources in Python
   dev_url: https://github.com/pacman82/arrow-odbc-py
 
 extra:
   recipe-maintainers:
     - timkpaine
-    - pacman82 
+    - pacman82
