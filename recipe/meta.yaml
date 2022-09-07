@@ -38,7 +38,7 @@ requirements:
   run:
     - python
     - cffi
-    - libprotobuf >=3.21
+    - libprotobuf >=21
     - pyarrow
 
 test:
