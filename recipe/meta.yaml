@@ -10,7 +10,7 @@ source:
   sha256: 2dd9e5e76799ab34508b8c6792cd99f0d8792a9334b3caec78fc59df7b46c302
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   script:
     - {{ PYTHON }} -m build --no-isolation
