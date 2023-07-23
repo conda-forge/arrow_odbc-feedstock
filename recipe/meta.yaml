@@ -30,7 +30,7 @@ requirements:
     - python
     - python-build
     - cffi
-    - maturin >=0.13,<0.14
+    - maturin >=1,<2
     - milksnake
     - pip
     - pyarrow
