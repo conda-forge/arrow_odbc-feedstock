@@ -1,5 +1,6 @@
 {% set name = "arrow_odbc" %}
 {% set version = "1.2.0" %}
+{% set build_num = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +11,7 @@ source:
   sha256: cc6803074299a38ab01a1906556a772b242d06e2d348cbbe7971e9a777823ca2
 
 build:
-  number: 0
+  number: {{ build_num }}
   skip: true  # [win]
   script:
     - {{ PYTHON }} -m build --no-isolation
@@ -55,7 +56,7 @@ outputs:
         - python
       run:
         - python
-        - {{ pin_subpackage("arrow_odbc", exact=True) }}
+        - arrow_odbc ={{ version }}=*_{{ build_num }}
 
     test:
       imports:
