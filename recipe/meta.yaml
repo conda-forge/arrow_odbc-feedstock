@@ -56,7 +56,7 @@ outputs:
         - python
       run:
         - python
-        - {{ version }} *_{{ build_num }}
+        - {{ version }}*_{{ build_num }}
 
     test:
       imports:
