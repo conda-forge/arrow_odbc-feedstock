@@ -38,10 +38,12 @@ requirements:
     - pip
     - pyarrow >=8
     - unixodbc
+    - libiconv  # [osx]
   run:
     - python
     - cffi
     - pyarrow >=8
+    - libiconv  # [osx]
 
 test:
   imports:
