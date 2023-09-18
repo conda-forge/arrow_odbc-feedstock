@@ -14,7 +14,8 @@ build:
   number: {{ build_num }}
   skip: true  # [win]
   script:
-    - {{ PYTHON }} -m build --no-isolation
+    - RUSTFLAGS="-Clink-args=-Wl,-L$PREFIX/lib" {{ PYTHON }} -m build --no-isolation  # [unix]
+    - {{ PYTHON }} -m build --no-isolation                                            # [win]
     - {{ PYTHON }} -m pip install dist/*.whl --no-deps
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
@@ -26,7 +27,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
-    - unixodbc
   host:
     - python
     - python-build
