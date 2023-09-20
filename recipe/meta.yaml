@@ -14,19 +14,21 @@ build:
   number: {{ build_num }}
   skip: true  # [win]
   script:
-    - {{ PYTHON }} -m build --no-isolation
+    - RUSTFLAGS="-Clink-args=-Wl,-L$PREFIX/lib" {{ PYTHON }} -m build --no-isolation  # [unix]
+    - {{ PYTHON }} -m build --no-isolation                                            # [win]
     - {{ PYTHON }} -m pip install dist/*.whl --no-deps
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
   build:
+    - maturin >=1,<2                      # [build_platform != target_platform]
+    - cffi                                # [build_platform != target_platform]
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - crossenv                            # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
-    - unixodbc
   host:
     - python
     - python-build
@@ -36,6 +38,7 @@ requirements:
     - pip
     - pyarrow >=8
     - unixodbc
+    - libiconv  # [osx]
   run:
     - python
     - cffi
