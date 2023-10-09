@@ -78,5 +78,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - jonashaag
     - timkpaine
     - pacman82
