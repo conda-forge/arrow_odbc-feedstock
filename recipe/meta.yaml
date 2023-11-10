@@ -15,7 +15,7 @@ build:
   script:
     - RUSTFLAGS="-Clink-args=-Wl,-L$PREFIX/lib" {{ PYTHON }} -m build --no-isolation  # [unix]
     - {{ PYTHON }} -m build --no-isolation                                            # [win]
-    - {{ PYTHON }} -m pip install dist/*.whl --no-deps
+    - {{ PYTHON }} -m pip install --no-deps --find-links dist arrow_odbc
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
