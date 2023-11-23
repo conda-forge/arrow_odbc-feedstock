@@ -51,14 +51,12 @@ test:
 outputs:
   - name: arrow_odbc
   - name: arrow-odbc
-    build:
-      noarch: python
     requirements:
       host:
         - python
       run:
         - python
-        - arrow_odbc ={{ version }}=*_{{ build_num }}
+        - {{ pin_subpackage('arrow_odbc', exact=True) }}
 
     test:
       imports:
