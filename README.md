@@ -302,6 +302,3 @@ Feedstock Maintainers
 * [@pacman82](https://github.com/pacman82/)
 * [@timkpaine](https://github.com/timkpaine/)
 
-
-<!-- dummy commit to enable rerendering -->
-
