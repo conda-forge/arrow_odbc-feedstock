@@ -13,9 +13,8 @@ source:
 build:
   number: {{ build_num }}
   script:
-    - RUSTFLAGS="-Clink-args=-Wl,-L$PREFIX/lib" {{ PYTHON }} -m build --no-isolation  # [unix]
-    - {{ PYTHON }} -m build --no-isolation                                            # [win]
-    - {{ PYTHON }} -m pip install --no-deps --find-links dist arrow_odbc
+    - export RUSTFLAGS="-Clink-args=-Wl,-L$PREFIX/lib"  # [unix]
+    - {{ PYTHON }} -m pip install --no-deps --no-build-isolation .
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
