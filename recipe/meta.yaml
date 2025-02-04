@@ -1,21 +1,20 @@
 {% set name = "arrow_odbc" %}
-{% set version = "7.0.4" %}
-{% set build_num = 1 %}
+{% set version = "8.1.1" %}
+{% set build_num = 0 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4ec15562f5b4dff3eb61de6f16f16e605e500f3567d1967e145d1db1d3b21b0b
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 03880cbef1492af9ee01f3f2f4fb4702ce7365341b8ed7400546bd50467c296b
 
 build:
   number: {{ build_num }}
   script:
-    - RUSTFLAGS="-Clink-args=-Wl,-L$PREFIX/lib" {{ PYTHON }} -m build --no-isolation  # [unix]
-    - {{ PYTHON }} -m build --no-isolation                                            # [win]
-    - {{ PYTHON }} -m pip install --no-deps --find-links dist arrow_odbc
+    - export RUSTFLAGS="-Clink-args=-Wl,-L$PREFIX/lib"  # [unix]
+    - {{ PYTHON }} -m pip install --no-deps --no-build-isolation .
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
