@@ -55,12 +55,14 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
-        - python
+        - python >={{ python_min }}
         - arrow_odbc ={{ version }}=*_{{ build_num }}
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - arrow_odbc
 
