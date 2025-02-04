@@ -1,6 +1,6 @@
 {% set name = "arrow_odbc" %}
 {% set version = "8.1.1" %}
-{% set build_num = 0 %}
+{% set build_num = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -46,26 +46,6 @@ requirements:
 test:
   imports:
     - arrow_odbc
-
-
-outputs:
-  - name: arrow_odbc
-  - name: arrow-odbc
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }}
-        - arrow_odbc ={{ version }}=*_{{ build_num }}
-
-    test:
-      requires:
-        - python {{ python_min }}
-      imports:
-        - arrow_odbc
-
 
 about:
   home: https://github.com/pacman82/arrow-odbc-py
