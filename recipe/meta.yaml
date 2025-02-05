@@ -33,7 +33,6 @@ requirements:
     - python-build
     - cffi
     - maturin >=1,<2
-    - milksnake
     - pip
     - pyarrow >=8
     - unixodbc  # [not win]
