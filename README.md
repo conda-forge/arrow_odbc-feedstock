@@ -181,7 +181,6 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-arrow--odbc-green.svg)](https://anaconda.org/conda-forge/arrow-odbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/arrow-odbc.svg)](https://anaconda.org/conda-forge/arrow-odbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/arrow-odbc.svg)](https://anaconda.org/conda-forge/arrow-odbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/arrow-odbc.svg)](https://anaconda.org/conda-forge/arrow-odbc) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-arrow_odbc-green.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) |
 
 Installing arrow_odbc
@@ -194,41 +193,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `arrow-odbc, arrow_odbc` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `arrow_odbc` can be installed with `conda`:
 
 ```
-conda install arrow-odbc arrow_odbc
-```
-
-or with `mamba`:
-
-```
-mamba install arrow-odbc arrow_odbc
-```
-
-It is possible to list all of the versions of `arrow-odbc` available on your platform with `conda`:
-
-```
-conda search arrow-odbc --channel conda-forge
+conda install arrow_odbc
 ```
 
 or with `mamba`:
 
 ```
-mamba search arrow-odbc --channel conda-forge
+mamba install arrow_odbc
+```
+
+It is possible to list all of the versions of `arrow_odbc` available on your platform with `conda`:
+
+```
+conda search arrow_odbc --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search arrow_odbc --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search arrow-odbc --channel conda-forge
+mamba repoquery search arrow_odbc --channel conda-forge
 
-# List packages depending on `arrow-odbc`:
-mamba repoquery whoneeds arrow-odbc --channel conda-forge
+# List packages depending on `arrow_odbc`:
+mamba repoquery whoneeds arrow_odbc --channel conda-forge
 
-# List dependencies of `arrow-odbc`:
-mamba repoquery depends arrow-odbc --channel conda-forge
+# List dependencies of `arrow_odbc`:
+mamba repoquery depends arrow_odbc --channel conda-forge
 ```
 
 
