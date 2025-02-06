@@ -1,6 +1,6 @@
 {% set name = "arrow_odbc" %}
 {% set version = "8.1.1" %}
-{% set build_num = 1 %}
+{% set build_num = 2 %}
 
 package:
   name: {{ name|lower }}
@@ -33,7 +33,6 @@ requirements:
     - python-build
     - cffi
     - maturin >=1,<2
-    - milksnake
     - pip
     - pyarrow >=8
     - unixodbc  # [not win]
