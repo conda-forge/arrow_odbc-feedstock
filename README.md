@@ -181,7 +181,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-arrow_odbc-green.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-arrow__odbc-green.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) |
 
 Installing arrow_odbc
 =====================
