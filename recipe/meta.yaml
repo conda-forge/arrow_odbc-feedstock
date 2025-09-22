@@ -1,5 +1,5 @@
 {% set name = "arrow_odbc" %}
-{% set version = "9.3.1" %}
+{% set version = "9.3.2" %}
 {% set build_num = 2 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 36ae04139797b1f312b27d6f7155c65fb44deecdf9bb4a2f41085b5461977929
+  sha256: 3d228868b6feca2bab2995021fd0e70b3b4de8b0d9765dadbd895a58a6be75b9
 
 build:
   number: {{ build_num }}
