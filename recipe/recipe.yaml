@@ -7,12 +7,12 @@ recipe:
   name: ${{ name|lower }}
   version: ${{ version }}
 
-build:
-  number: ${{ build }}
-
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
   sha256: 31d4bdf0070a8e05371700a9794db3500e7548e6779a4477f2ef241d0c70a052
+
+build:
+  number: ${{ build }}
 
 outputs:
   - package:
@@ -68,6 +68,7 @@ outputs:
       name: ${{ name | replace("-", "_") }}
     build:
       noarch: generic
+      number: ${{ build }}
       skip:
         - not target_platform == "linux-64"
     requirements:
@@ -75,6 +76,11 @@ outputs:
         - ${{ pin_subpackage(name, lower_bound="x.x.x", upper_bound="x.x.x") }}
     about:
       license_file: []
+    tests:
+      - python:
+          imports:
+            - arrow_odbc
+          pip_check: true
 
 about:
   homepage: https://github.com/pacman82/arrow-odbc-py
