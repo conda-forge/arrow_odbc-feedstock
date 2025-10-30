@@ -37,7 +37,7 @@ outputs:
             - maturin >=1,<2
             - cffi
             - python
-            - cross-python-${{ target_platform }}
+            - cross-python_${{ target_platform }}
             - crossenv
         - ${{ compiler('c') }}
         - ${{ stdlib('c') }}
