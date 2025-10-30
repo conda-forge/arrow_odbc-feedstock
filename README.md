@@ -1,7 +1,22 @@
-About arrow_odbc-feedstock
+About arrow-odbc-feedstock
 ==========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/arrow_odbc-feedstock/blob/main/LICENSE.txt)
+
+
+About arrow-odbc
+----------------
+
+Home: https://github.com/pacman82/arrow-odbc-py
+
+Package license: MIT
+
+Summary: Read Apache Arrow batches from ODBC data sources in Python
+
+Development: https://github.com/pacman82/arrow-odbc-py
+
+About arrow_odbc
+----------------
 
 Home: https://github.com/pacman82/arrow-odbc-py
 
@@ -29,38 +44,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.10.____cpython</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17172&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/arrow_odbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17172&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/arrow_odbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.12.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17172&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/arrow_odbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17172&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/arrow_odbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17172&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/arrow_odbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.14.____cp314" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/arrow_odbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -216,53 +203,54 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-arrow--odbc-green.svg)](https://anaconda.org/conda-forge/arrow-odbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/arrow-odbc.svg)](https://anaconda.org/conda-forge/arrow-odbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/arrow-odbc.svg)](https://anaconda.org/conda-forge/arrow-odbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/arrow-odbc.svg)](https://anaconda.org/conda-forge/arrow-odbc) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-arrow__odbc-green.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/arrow_odbc.svg)](https://anaconda.org/conda-forge/arrow_odbc) |
 
-Installing arrow_odbc
+Installing arrow-odbc
 =====================
 
-Installing `arrow_odbc` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `arrow-odbc` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `arrow_odbc` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `arrow-odbc, arrow_odbc` can be installed with `conda`:
 
 ```
-conda install arrow_odbc
-```
-
-or with `mamba`:
-
-```
-mamba install arrow_odbc
-```
-
-It is possible to list all of the versions of `arrow_odbc` available on your platform with `conda`:
-
-```
-conda search arrow_odbc --channel conda-forge
+conda install arrow-odbc arrow_odbc
 ```
 
 or with `mamba`:
 
 ```
-mamba search arrow_odbc --channel conda-forge
+mamba install arrow-odbc arrow_odbc
+```
+
+It is possible to list all of the versions of `arrow-odbc` available on your platform with `conda`:
+
+```
+conda search arrow-odbc --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search arrow-odbc --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search arrow_odbc --channel conda-forge
+mamba repoquery search arrow-odbc --channel conda-forge
 
-# List packages depending on `arrow_odbc`:
-mamba repoquery whoneeds arrow_odbc --channel conda-forge
+# List packages depending on `arrow-odbc`:
+mamba repoquery whoneeds arrow-odbc --channel conda-forge
 
-# List dependencies of `arrow_odbc`:
-mamba repoquery depends arrow_odbc --channel conda-forge
+# List dependencies of `arrow-odbc`:
+mamba repoquery depends arrow-odbc --channel conda-forge
 ```
 
 
@@ -287,12 +275,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -307,19 +295,19 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating arrow_odbc-feedstock
+Updating arrow-odbc-feedstock
 =============================
 
-If you would like to improve the arrow_odbc recipe or build a new
+If you would like to improve the arrow-odbc recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/arrow_odbc-feedstock are
+Note that all branches in the conda-forge/arrow-odbc-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
@@ -334,5 +322,6 @@ Feedstock Maintainers
 
 * [@jonashaag](https://github.com/jonashaag/)
 * [@pacman82](https://github.com/pacman82/)
+* [@pavelzw](https://github.com/pavelzw/)
 * [@timkpaine](https://github.com/timkpaine/)
 
