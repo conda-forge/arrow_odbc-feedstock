@@ -54,6 +54,7 @@ outputs:
             - unixodbc
         - if: osx
           then:
+            - unixodbc
             - libiconv
       run:
         - python
