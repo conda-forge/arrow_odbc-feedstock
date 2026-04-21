@@ -24,6 +24,11 @@ outputs:
         env:
           CARGO_PROFILE_RELEASE_STRIP: symbols
           CARGO_PROFILE_RELEASE_LTO: fat
+          # arrow-odbc deliberately uses the system's ODBC driver manager at
+          # runtime and must not bundle libodbc. Skip maturin's wheel-repair
+          # step, which on macOS (since maturin 1.13) would otherwise fail to
+          # resolve @rpath/libodbc.2.dylib or bundle it into the wheel.
+          MATURIN_PEP517_ARGS: --auditwheel=skip
         content:
           - if: unix
             then:
