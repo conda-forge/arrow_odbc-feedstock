@@ -1,6 +1,6 @@
 context:
   name: arrow-odbc
-  version: "10.4.2"
+  version: "10.5.0"
   build: 0
 
 recipe:
@@ -9,7 +9,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
-  sha256: 93c2eee84e5c5a404f0c43c4a5d7b1da4a2606031d0d9b5e7059a62685b82fb8
+  sha256: 0aa22ef2ac70b39f27346160908ad082dd76e6d8e670fe37633102a70f99780d
 
 build:
   number: ${{ build }}
