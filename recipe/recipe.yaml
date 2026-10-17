@@ -1,7 +1,7 @@
 context:
   name: arrow-odbc
   version: "10.6.0"
-  build: 0
+  build: 1
 
 recipe:
   name: ${{ name|lower }}
