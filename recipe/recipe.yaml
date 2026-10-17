@@ -1,7 +1,7 @@
 context:
   name: arrow-odbc
   version: "10.6.0"
-  build: 1
+  build: 2
 
 recipe:
   name: ${{ name|lower }}
@@ -20,6 +20,14 @@ outputs:
       version: ${{ version }}
     build:
       number: ${{ build }}
+      # arrow-odbc talks to its Rust library through cffi: the compiled code
+      # exposes a plain C ABI and never links against libpython, so it does not
+      # depend on the Python version (upstream wheels are tagged py3-none).
+      # Build once against python_min and ship it as a Python version-independent
+      # package (CEP 20).
+      skip: not is_python_min
+      python:
+        version_independent: true
       script:
         env:
           CARGO_PROFILE_RELEASE_STRIP: symbols
@@ -61,7 +69,7 @@ outputs:
           then:
             - libiconv
       run:
-        - python
+        - python >=${{ python_min }}
         - cffi
         - pyarrow >=8
     tests:
@@ -69,6 +77,9 @@ outputs:
           imports:
             - arrow_odbc
           pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
   - package:
       name: ${{ name | replace("-", "_") }}
     build:
